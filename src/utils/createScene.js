@@ -1,6 +1,6 @@
 import * as THREE from "three";
 
-const createScene = (createPlanet) => {
+const createScene = (createPlanet, planetImage) => {
   const aspect = window.innerWidth / window.innerHeight;
   const canvas = document.querySelector("#webgl");
   const scene = new THREE.Scene();
@@ -17,11 +17,10 @@ const createScene = (createPlanet) => {
   renderer.setClearColor(0x000000, 0.0);
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
   scene.add(ambientLight);
-
   const pointLight = new THREE.PointLight(0xffffff, 1);
   pointLight.position.set(5, 3, 5);
   scene.add(pointLight);
-  createPlanet(scene, camera, renderer);
+  createPlanet(planetImage, scene, camera, renderer);
 };
 
 export default createScene;

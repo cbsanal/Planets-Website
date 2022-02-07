@@ -1,4 +1,4 @@
 import createScene from "./createScene";
-import createEarth from "./createEarth";
+import createPlanet from "./createPlanet";
 
-export { createScene, createEarth };
+export { createScene, createPlanet };
