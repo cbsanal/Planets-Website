@@ -1,1 +1,19 @@
 @import "./reset";
+@import "./menu-btn";
+
+.planet-container {
+  display: flex;
+  div {
+    flex: 1;
+  }
+}
+// .info-container {
+//   border: 20px red solid;
+//   height: 100vh;
+//   z-index: 2;
+// }
+#webgl {
+  position: absolute;
+  // right: 30%;
+  background: transparent !important;
+}

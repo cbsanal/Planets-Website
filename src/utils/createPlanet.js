@@ -7,6 +7,7 @@ const createPlanet = (planetImage, scene, camera, renderer) => {
   loader.load(planetImage, (texture) => {
     const material = new THREE.MeshBasicMaterial({ map: texture });
     planetMesh = new THREE.Mesh(planetGeometry, material);
+    // planetMesh.position.x = -0.65;
     scene.add(planetMesh);
   });
   const render = () => {
