@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { createScene, createPlanet } from "../utils";
+import PlanetPage from "../components/PlanetPage/PlanetPage";
 import mars from "../images/mars.jpg";
-// import { Link } from "react-router-dom";
 
 const Mars = () => {
   useEffect(() => {
@@ -9,11 +9,13 @@ const Mars = () => {
   }, []);
 
   return (
-    <div className="planet-container">
-      <button className="custom-btn btn-10 x">i</button>
-      <canvas id="webgl"></canvas>
-      <button className="custom-btn btn-10">Other Planets</button>
-    </div>
+    <PlanetPage
+      planetName="Mars"
+      planetInfo='Mars is the fourth planet from the Sun and the second-smallest planet in
+      the Solar System, being larger than only Mercury. In English, Mars
+      carries the name of the Roman god of war and is often referred to as the
+      "Red Planet".'
+    />
   );
 };
 

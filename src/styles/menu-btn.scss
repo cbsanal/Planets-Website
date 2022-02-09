@@ -13,6 +13,11 @@
   height: 50px;
   font-size: 24px;
   cursor: pointer;
+  font-family: "Syne Tactile", cursive;
+  font-size: 32px;
+  &.active {
+    background: #21ebff;
+  }
 }
 .btn-10:after {
   position: absolute;
