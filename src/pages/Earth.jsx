@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import { createScene, createPlanet } from "../utils";
-import PlanetPage from "../components/PlanetPage/PlanetPage";
+import PlanetPage from "../components/PlanetPage";
 import earth from "../images/earth.jpg";
 
 const Earth = () => {
   useEffect(() => {
-    createScene(createPlanet, earth);
+    const clear = setTimeout(() => {
+      localStorage.clear();
+      createScene(createPlanet, earth);
+    }, 200);
+    return () => {
+      clearTimeout(clear);
+      localStorage.setItem("clear", true);
+    };
   }, []);
-
   return (
     <PlanetPage
       planetName="Earth"

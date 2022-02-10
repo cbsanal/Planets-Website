@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import { createScene, createPlanet } from "../utils";
-import PlanetPage from "../components/PlanetPage/PlanetPage";
+import PlanetPage from "../components/PlanetPage";
 import mars from "../images/mars.jpg";
 
 const Mars = () => {
   useEffect(() => {
-    createScene(createPlanet, mars);
+    const clear = setTimeout(() => {
+      localStorage.clear();
+      createScene(createPlanet, mars);
+    }, 200);
+    return () => {
+      clearTimeout(clear);
+      localStorage.setItem("clear", true);
+    };
   }, []);
-
   return (
     <PlanetPage
       planetName="Mars"

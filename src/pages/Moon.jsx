@@ -1,13 +1,19 @@
 import { useEffect } from "react";
 import { createScene, createPlanet } from "../utils";
-import PlanetPage from "../components/PlanetPage/PlanetPage";
+import PlanetPage from "../components/PlanetPage";
 import moon from "../images/moon.jpg";
 
 const Moon = () => {
   useEffect(() => {
-    createScene(createPlanet, moon);
+    const clear = setTimeout(() => {
+      localStorage.clear();
+      createScene(createPlanet, moon);
+    }, 200);
+    return () => {
+      clearTimeout(clear);
+      localStorage.setItem("clear", true);
+    };
   }, []);
-
   return (
     <PlanetPage
       planetName="Moon"

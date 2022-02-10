@@ -11,6 +11,7 @@ const createScene = (createPlanet, planetImage) => {
     canvas: canvas,
     antialias: true,
     alpha: true,
+    autoClear: true,
   });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
