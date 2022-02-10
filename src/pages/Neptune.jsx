@@ -1,19 +1,9 @@
-import { useEffect } from "react";
-import { createScene, createPlanet } from "../utils";
-import PlanetPage from "../components/PlanetPage";
-import neptune from "../images/neptune.jpg";
+import useCreateAndDeleteScene from '../hooks/useCreateAndDeleteScene';
+import PlanetPage from '../components/PlanetPage';
+import neptune from '../images/neptune.jpg';
 
-const Earth = () => {
-  useEffect(() => {
-    const clear = setTimeout(() => {
-      localStorage.clear();
-      createScene(createPlanet, neptune);
-    }, 200);
-    return () => {
-      clearTimeout(clear);
-      localStorage.setItem("clear", true);
-    };
-  }, []);
+const Neptune = () => {
+  useCreateAndDeleteScene(neptune);
   return (
     <PlanetPage
       planetName="Neptune"
@@ -27,4 +17,4 @@ const Earth = () => {
   );
 };
 
-export default Earth;
+export default Neptune;

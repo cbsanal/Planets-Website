@@ -1,19 +1,9 @@
-import { useEffect } from "react";
-import { createScene, createPlanet } from "../utils";
-import PlanetPage from "../components/PlanetPage";
-import earth from "../images/earth.jpg";
+import useCreateAndDeleteScene from '../hooks/useCreateAndDeleteScene';
+import PlanetPage from '../components/PlanetPage';
+import earth from '../images/earth.jpg';
 
 const Earth = () => {
-  useEffect(() => {
-    const clear = setTimeout(() => {
-      localStorage.clear();
-      createScene(createPlanet, earth);
-    }, 200);
-    return () => {
-      clearTimeout(clear);
-      localStorage.setItem("clear", true);
-    };
-  }, []);
+  useCreateAndDeleteScene(earth);
   return (
     <PlanetPage
       planetName="Earth"

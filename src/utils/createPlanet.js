@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import * as THREE from 'three';
 
 const createPlanet = (planetImage, scene, camera, renderer) => {
   const planetGeometry = new THREE.SphereBufferGeometry(0.6, 32, 32);
@@ -10,7 +10,7 @@ const createPlanet = (planetImage, scene, camera, renderer) => {
     renderer.render(scene, camera);
   };
   const animate = () => {
-    if (localStorage.getItem("clear")) {
+    if (localStorage.getItem('clear')) {
       while (scene.children.length > 0) scene.remove(scene.children[0]);
       texture.dispose();
       material.dispose();

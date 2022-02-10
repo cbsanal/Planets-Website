@@ -1,12 +1,12 @@
 .planet-info-container {
   .title {
-    font-family: "Acme", sans-serif;
+    font-family: 'Acme', sans-serif;
     font-size: 36px;
     letter-spacing: 1px;
     margin-bottom: 15px;
   }
   max-width: 350px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   line-height: 35px;
   position: absolute;
@@ -33,7 +33,7 @@
 }
 .btn {
   border: 1px solid #21ebff;
-  font-family: "Acme", sans-serif;
+  font-family: 'Acme', sans-serif;
   color: #21ebff;
   box-shadow: 0 0 10px #21ebff, 0 0 10px #21ebff inset;
   background: #000;
@@ -55,7 +55,7 @@
 }
 .btn:after {
   position: absolute;
-  content: " ";
+  content: ' ';
   top: 0;
   left: 0;
   z-index: -1;
@@ -77,5 +77,5 @@
   top: 15px;
   left: 15px;
   width: 50px;
-  font-family: "Syne Tactile", cursive;
+  font-family: 'Syne Tactile', cursive;
 }

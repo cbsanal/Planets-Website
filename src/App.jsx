@@ -1,5 +1,5 @@
-import { Earth, Moon, Mars, Jupiter, Mercury, Neptune, Sun } from "./pages";
-import { Routes, Route } from "react-router-dom";
+import { Earth, Moon, Mars, Jupiter, Mercury, Neptune, Sun } from './pages';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (

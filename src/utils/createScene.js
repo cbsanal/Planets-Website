@@ -1,8 +1,8 @@
-import * as THREE from "three";
+import * as THREE from 'three';
 
 const createScene = (createPlanet, planetImage) => {
   const aspect = window.innerWidth / window.innerHeight;
-  const canvas = document.querySelector("#webgl");
+  const canvas = document.querySelector('#webgl');
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(40, aspect, 1, 1000);
   camera.position.z = 2;

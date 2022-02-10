@@ -1,19 +1,9 @@
-import { useEffect } from "react";
-import { createScene, createPlanet } from "../utils";
-import PlanetPage from "../components/PlanetPage";
-import jupiter from "../images/jupiter.jpg";
+import useCreateAndDeleteScene from '../hooks/useCreateAndDeleteScene';
+import PlanetPage from '../components/PlanetPage';
+import jupiter from '../images/jupiter.jpg';
 
 const Jupiter = () => {
-  useEffect(() => {
-    const clear = setTimeout(() => {
-      localStorage.clear();
-      createScene(createPlanet, jupiter);
-    }, 200);
-    return () => {
-      clearTimeout(clear);
-      localStorage.setItem("clear", true);
-    };
-  }, []);
+  useCreateAndDeleteScene(jupiter);
   return (
     <PlanetPage
       planetName="Jupiter"

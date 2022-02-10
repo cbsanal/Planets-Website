@@ -1,5 +1,5 @@
-import { useState } from "react";
-import OtherOptions from "../OtherOptions";
+import { useState } from 'react';
+import OtherOptions from '../OtherOptions';
 const PlanetPage = ({ planetName, planetInfo }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
@@ -8,7 +8,7 @@ const PlanetPage = ({ planetName, planetInfo }) => {
       {showOptions && <OtherOptions setShowOptions={setShowOptions} />}
       <button
         onClick={() => setShowInfo(!showInfo)}
-        className={`${showInfo ? "active" : ""} info-btn btn`}
+        className={`${showInfo ? 'active' : ''} info-btn btn`}
       >
         i
       </button>
