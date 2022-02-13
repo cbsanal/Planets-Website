@@ -1,4 +1,4 @@
-import { Earth, Moon, Mars, Jupiter, Mercury, Neptune, Sun } from './pages';
+import { Earth, Moon, Mars, Jupiter, Mercury, Neptune, Sun, Uranus, Venus } from './pages';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -11,6 +11,8 @@ const App = () => {
       <Route path="/mercury" element={<Mercury />} />
       <Route path="/neptune" element={<Neptune />} />
       <Route path="/sun" element={<Sun />} />
+      <Route path="/uranus" element={<Uranus />} />
+      <Route path="/venus" element={<Venus />} />
     </Routes>
   );
 };

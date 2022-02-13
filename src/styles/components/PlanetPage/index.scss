@@ -1,10 +1,4 @@
 .planet-info-container {
-  .title {
-    font-family: 'Acme', sans-serif;
-    font-size: 36px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-  }
   max-width: 350px;
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
@@ -21,6 +15,12 @@
   max-height: 55vh;
   overflow-y: auto;
   z-index: 999;
+  .title {
+    font-family: 'Acme', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
   &::-webkit-scrollbar {
     width: 7.5px;
   }

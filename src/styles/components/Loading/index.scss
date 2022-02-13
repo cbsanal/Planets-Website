@@ -1,17 +1,14 @@
+@use '../../mixins' as m;
+
 .loading {
   width: 100vw;
   height: 100vh;
   background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include m.flex();
   z-index: 2;
   position: relative;
   &-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include m.flex(center, center, column);
     &-text {
       margin-top: 20px;
       font-size: 32px;

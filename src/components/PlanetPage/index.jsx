@@ -24,7 +24,7 @@ const PlanetPage = ({ planetName, planetInfo, display }) => {
           </div>
         )}
         <button onClick={() => setShowOptions(true)} className="btn">
-          Other Planets
+          Other Options
         </button>
       </div>
     </>
