@@ -1,9 +1,11 @@
-import useCreateAndDeleteScene from '../hooks/useCreateAndDeleteScene';
+import useCustomUseEffect from '../hooks/useCustomUseEffect';
 import PlanetPage from '../components/PlanetPage';
 import earth from '../images/earth.jpg';
+import { useState } from 'react';
 
 const Earth = () => {
-  useCreateAndDeleteScene(earth);
+  const [isSceneRendered, setIsSceneRendered] = useState(false);
+  useCustomUseEffect(earth, setIsSceneRendered);
   return (
     <PlanetPage
       planetName="Earth"
@@ -11,6 +13,7 @@ const Earth = () => {
       of water can be found throughout the Solar System, only Earth sustains liquid surface water. About 71% of 
       Earth's surface is made up of the ocean, dwarfing Earth's polar ice, lakes and rivers. 
       The remaining 29% of Earth's surface is land, consisting of continents and islands."
+      display={isSceneRendered ? 'block' : 'none'}
     />
   );
 };

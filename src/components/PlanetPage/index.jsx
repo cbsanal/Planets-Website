@@ -1,28 +1,33 @@
 import { useState } from 'react';
 import OtherOptions from '../OtherOptions';
-const PlanetPage = ({ planetName, planetInfo }) => {
+import Loading from '../Loading';
+const PlanetPage = ({ planetName, planetInfo, display }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
   return (
-    <div className="planet-container">
-      {showOptions && <OtherOptions setShowOptions={setShowOptions} />}
-      <button
-        onClick={() => setShowInfo(!showInfo)}
-        className={`${showInfo ? 'active' : ''} info-btn btn`}
-      >
-        i
-      </button>
-      {showInfo && (
-        <div className="planet-info-container">
-          <div className="title">{planetName}</div>
-          {planetInfo}
-        </div>
-      )}
-      <canvas id="webgl"></canvas>
-      <button onClick={() => setShowOptions(true)} className="btn">
-        Other Planets
-      </button>
-    </div>
+    <>
+      {display === 'none' && <Loading />}
+      {/* I need canvas to be rendered, this is why I'm using display: none */}
+      <div className="planet-container" style={{ display: `${display}` }}>
+        <canvas id="webgl"></canvas>
+        {showOptions && <OtherOptions setShowOptions={setShowOptions} />}
+        <button
+          onClick={() => setShowInfo(!showInfo)}
+          className={`${showInfo ? 'active' : ''} info-btn btn`}
+        >
+          i
+        </button>
+        {showInfo && (
+          <div className="planet-info-container">
+            <div className="title">{planetName}</div>
+            {planetInfo}
+          </div>
+        )}
+        <button onClick={() => setShowOptions(true)} className="btn">
+          Other Planets
+        </button>
+      </div>
+    </>
   );
 };
 

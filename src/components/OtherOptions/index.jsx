@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import navigationList from './options';
+
 const OtherOptions = ({ setShowOptions }) => {
   return (
     <div className="other-options">

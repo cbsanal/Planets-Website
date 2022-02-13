@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 
-const createPlanet = (planetImage, scene, camera, renderer) => {
+const createPlanet = async (planetImage, scene, camera, renderer, setIsSceneRendered) => {
   const planetGeometry = new THREE.SphereBufferGeometry(0.6, 32, 32);
-  const texture = new THREE.TextureLoader().load(planetImage);
+  const texture = await new THREE.TextureLoader().loadAsync(planetImage);
   let material = new THREE.MeshBasicMaterial({ map: texture });
   let planetMesh = new THREE.Mesh(planetGeometry, material);
   scene.add(planetMesh);
@@ -24,6 +24,7 @@ const createPlanet = (planetImage, scene, camera, renderer) => {
     render();
   };
   animate();
+  setIsSceneRendered(true);
 };
 
 export default createPlanet;

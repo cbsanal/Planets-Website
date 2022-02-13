@@ -1,6 +1,7 @@
 import * as THREE from 'three';
+import { createPlanet } from '.';
 
-const createScene = (createPlanet, planetImage) => {
+const createScene = (planetImage, setIsSceneRendered) => {
   const aspect = window.innerWidth / window.innerHeight;
   const canvas = document.querySelector('#webgl');
   const scene = new THREE.Scene();
@@ -15,7 +16,7 @@ const createScene = (createPlanet, planetImage) => {
   });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
-  createPlanet(planetImage, scene, camera, renderer);
+  createPlanet(planetImage, scene, camera, renderer, setIsSceneRendered);
   //   window.addEventListener("resize", () => {
   //     renderer.setSize(window.innerWidth, window.innerHeight);
   //   });
