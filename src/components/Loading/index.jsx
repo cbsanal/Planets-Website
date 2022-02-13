@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <div className="loading">
       <div className="loading-container">
-        <img src={loading} alt="loading-gif" />
+        <img width={128} height={128} src={loading} alt="loading-gif" />
         <span className="loading-container-text">Loading...</span>
       </div>
     </div>

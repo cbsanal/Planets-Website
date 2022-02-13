@@ -27,6 +27,7 @@
     border: #000 5px solid;
     position: relative;
     transition: color 0.25s ease-in-out;
+    text-transform: capitalize !important;
     &:hover {
       color: #fff;
       background-color: #000;

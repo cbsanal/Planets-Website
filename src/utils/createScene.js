@@ -2,8 +2,10 @@ import * as THREE from 'three';
 import { createPlanet } from '.';
 
 const createScene = (planetImage, setIsSceneRendered) => {
-  const aspect = window.innerWidth / window.innerHeight;
+  const aspect = (window.innerWidth * 6.5) / 10 / window.innerHeight;
   const canvas = document.querySelector('#webgl');
+  canvas.style.position = 'absolute';
+  canvas.style.right = '0';
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(40, aspect, 1, 1000);
   camera.position.z = 2;
@@ -14,12 +16,9 @@ const createScene = (planetImage, setIsSceneRendered) => {
     alpha: true,
     autoClear: true,
   });
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize((window.innerWidth * 6.5) / 10, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
   createPlanet(planetImage, scene, camera, renderer, setIsSceneRendered);
-  //   window.addEventListener("resize", () => {
-  //     renderer.setSize(window.innerWidth, window.innerHeight);
-  //   });
 };
 
 export default createScene;
